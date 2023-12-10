@@ -6,6 +6,7 @@ const path = require('path')
 app.use(express.json());
 
 const userRoutes = require('./server/routes/user')
+const postRoutes = require('./server/routes/post')
 //croute to at least one other entity that is NOT user/customer/etc.
 
 //CORS middleware
@@ -17,6 +18,7 @@ next();
 });
 
 app.use('/users', userRoutes)
+app.use('/posts', postRoutes)
 // app.use for routes above
 
 const PORT = process.env.PORT || 3000

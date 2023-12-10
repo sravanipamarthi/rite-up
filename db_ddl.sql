@@ -1,29 +1,29 @@
 
-CREATE TABLE `User` (
-  `UserId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `FirstName` VARCHAR(100) NOT NULL,
-  `LastName` VARCHAR(100) NOT NULL,
-  `Username` VARCHAR(100) NOT NULL,
-  `Email` VARCHAR(255) NOT NULL,
-  `Password` VARCHAR(255) NOT NULL,
-  `CreatedAt` DATETIME default(NOW())
+CREATE TABLE IF NOT EXISTS User (
+  UserId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  FirstName VARCHAR(100) NOT NULL,
+  LastName VARCHAR(100) NOT NULL,
+  Username VARCHAR(100) NOT NULL,
+  Email VARCHAR(255) NOT NULL,
+  Password VARCHAR(255) NOT NULL,
+  CreatedAt DATETIME default(NOW())
 );
 
-CREATE TABLE `Post` (
-  `PostId` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `Content` LONGTEXT NOT NULL,
-  `UserId` INT,
-  `CreatedAt` DATETIME default(NOW()),
-  FOREIGN KEY(`UserId`) REFERENCES User(UserId)
+CREATE TABLE IF NOT EXISTS Post (
+  PostId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  Content LONGTEXT NOT NULL,
+  UserId INT,
+  CreatedAt DATETIME default(NOW()),
+  FOREIGN KEY(UserId) REFERENCES User(UserId)
 );
 
-CREATE TABLE `Like` (
-  `LikeId` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `UserId` INT,
-  `PostId` INT,
-  `CreatedAt` DATETIME default(NOW()),
-  FOREIGN KEY(`UserId`) REFERENCES User(UserId),
-  FOREIGN KEY(`PostId`) REFERENCES Post(PostId)
+CREATE TABLE IF NOT EXISTS Likes (
+  LikeId BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  UserId INT,
+  PostId INT,
+  CreatedAt DATETIME default(NOW()),
+  FOREIGN KEY(UserId) REFERENCES User(UserId),
+  FOREIGN KEY(PostId) REFERENCES Post(PostId)
 );
 
 INSERT INTO USER(FirstName, LastName, Username, Email, Password) VALUES("Sravani", "Pamarthi", "pamarths1", "pamarths1@newpaltz.edu", "Pamarthi@123");
@@ -39,9 +39,9 @@ INSERT INTO POST(Content, UserId) VALUES("Ready to hear some 🔥 tech roasts? P
 
 SELECT * FROM POST;
 
-INSERT INTO LIKE(UserId, PostId) VALUES(1, 1);
-INSERT INTO LIKE(UserId, PostId) VALUES(1, 2);
-INSERT INTO LIKE(UserId, PostId) VALUES(2, 1);
-INSERT INTO LIKE(UserId, PostId) VALUES(2, 3);
+INSERT INTO LIKES(UserId, PostId) VALUES(1, 1);
+INSERT INTO LIKES(UserId, PostId) VALUES(1, 2);
+INSERT INTO LIKES(UserId, PostId) VALUES(2, 1);
+INSERT INTO LIKES(UserId, PostId) VALUES(2, 3);
 
-SELECT * FROM LIKE;
+SELECT * FROM LIKES;
