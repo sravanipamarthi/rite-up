@@ -65,7 +65,7 @@ async function deletePost(post) {
 async function getAllPosts() {
   let sql = `
     SELECT p.Content, u.Username FROM post p
-    join user u on u.UserId=p.PostId;
+    join user u on u.UserId=p.UserId;
   `
   return await con.query(sql)
 }

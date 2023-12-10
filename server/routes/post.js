@@ -6,8 +6,8 @@ router
 
 .get('/getAllPosts', async (req, res) => {
   try {
-    const post = await Post.getPosts();
-    res.send(Posts)
+    const post = await Post.getAllPosts();
+    res.send(post)
   } catch(err) {
     res.status(401).send({message: err.message})
   }
