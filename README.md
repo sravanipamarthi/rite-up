@@ -12,7 +12,14 @@ Introducing Rite-Up, a unique social media platform where you can share your sto
 
 1. Clone the repository to your local machine using `git clone https://github.com/sravanipamarthi/rite-up`
 
-2. add respective values into [.env](./.env) file
+2. Create a [.env](./.env) file with following values
+    ```SQL
+    MYSQL_HOST="<YOUR_MYSQL_HOST>"
+    MYSQL_USERNAME="<YOUR_MYSQL_Username>"
+    MYSQL_PSWD="<YOUR_MYSQL_Password>"
+    MYSQL_DB="<YOUR_MYSQL_Database>"
+    MYSQL_PORT="<YOUR_MYSQL_PORT>"
+    ```
 
 3. run `npm i` to install the required dependencies
 
