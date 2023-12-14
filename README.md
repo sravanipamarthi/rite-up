@@ -3,6 +3,7 @@
 Introducing Rite-Up, a unique social media platform where you can share your stories through written posts. Connect and engage with others creatively!
 
 ## ER Diagram
+
 ![Rite-up ERD](./public/images/ERD.png)
 
 
