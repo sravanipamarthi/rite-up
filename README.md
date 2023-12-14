@@ -3,14 +3,24 @@
 Introducing Rite-Up, a unique social media platform where you can share your stories through written posts. Connect and engage with others creatively!
 
 ## ER Diagram
-![Rite-up ERD](./images/ERD.png)
+![Rite-up ERD](./public/images/ERD.png)
 
 
 ---
+# Getting Started
 
+## Prerequisites
+
+Ensure you have the following installed on your machine: 
+* [NodeJS](https://nodejs.org/)
+* [Git](https://git-scm.com/)
+* [MySQL](https://www.mysql.com/) 
 ## Setup
 
-1. Clone the repository to your local machine using `git clone https://github.com/sravanipamarthi/rite-up`
+1. Clone the repository to your local machine using:
+    ```bash
+    git clone https://github.com/sravanipamarthi/rite-up
+    ```
 
 2. Create a [.env](./.env) file with following values
     ```SQL
@@ -22,7 +32,21 @@ Introducing Rite-Up, a unique social media platform where you can share your sto
     ```
 
 3. run `npm i` to install the required dependencies
+    ```bash
+    npm i
+    ```
 
-4. now run `npm run dev` to start the application
+4. Start the application by running:
+    ```bash
+    npm run dev
+    ```
 
-5. Goto [localhost:3000](http://localhost:3000/) to use the application
+5. Open [localhost:3000](http://localhost:3000/) in your browser to use the application.
+
+
+\
+**Note:** Make sure to replace the placeholder values in the `.env` file with your actual MySQL database credentials.
+
+---
+### Copyright
+© Sravani Pamarthi | All Rights Reserved
