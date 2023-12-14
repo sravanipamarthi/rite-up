@@ -42,8 +42,6 @@ async function login(user) {
 async function register(user) {
   let userResult = await getUser(user.username)
   let userEmailResult = await getUser(user.email)
-  console.log(user.email, user.username);
-  console.log("Results: ", userResult, userEmailResult);
   if(userResult.length > 0 || userEmailResult.length > 0) throw Error("Username/Email already exists!!")
 
   let sql = `

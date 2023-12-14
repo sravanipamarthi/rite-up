@@ -169,20 +169,9 @@ async function displayPosts() {
 
     // Add event listeners for edit and delete buttons
     const editButtons = document.querySelectorAll('.edit-btn');
-    // editButtons.forEach(button => {
-    //     button.addEventListener('click', function () {
-    //         const postId = this.getAttribute('data-postid');
-    //         console.log(this.value);
-    //         const newContent = prompt('Enter new content:', '');
-    //         if (newContent !== null) {
-    //             editPost(postId, newContent);
-    //         }
-    //     });
-    // });
     editButtons.forEach(button => {
         button.addEventListener('click', function () {
             const postId = this.getAttribute('data-postid');
-            console.log(this.parentElement.previousSibling);
             const content = this.parentElement.previousSibling.innerHTML;
             openModal(content, postId);
         });

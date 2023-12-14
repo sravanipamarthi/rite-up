@@ -43,7 +43,6 @@ async function addPost(post) {
 
 // Update - CRUD
 async function editPost(post) {
-  console.log(post);
   let updatedPost = await getPost(post.PostId)
   if(updatedPost.length == 0) throw Error("Post not available!")
 
