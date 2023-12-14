@@ -1,4 +1,5 @@
 const userId = getCookieValue('userId');
+document.getElementById('currentYear').innerText = new Date().getFullYear();
 
 if (userId) {
     const FirstName = getCookieValue('FirstName');

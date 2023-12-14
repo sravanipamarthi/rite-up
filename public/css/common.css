@@ -1,10 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
 
 body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 nav {
@@ -32,6 +40,16 @@ nav a {
 
 #logout {
     margin-right: 20px;
+}
+
+footer {
+    background-color: #f1f1f1;
+    padding: 1px;
+    text-align: center;
+    position: relative;
+    font-weight: 600;
+    bottom: 0;
+    width: 100%;
 }
 
 /* Add this CSS to your existing stylesheet or create a new one */
