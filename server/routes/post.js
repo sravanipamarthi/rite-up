@@ -16,8 +16,8 @@ router
 // login post
 .post('/getPost', async (req, res) => {
   try {
-    const Post = await Post.getPosts(req.body)
-    res.send({...Post, message: "Mission Succeeded"})
+    const postsData = await Post.getPosts(req.body)
+    res.send({...postsData, message: "Mission Succeeded"})
   } catch(err) {
     res.status(401).send({message: err.message})
   }
@@ -26,8 +26,8 @@ router
 // register route
 .post('/addPost', async (req, res) => {
   try {
-    const Post = await Post.addPost(req.body)
-    res.send({...Post, message: "Mission Succeeded"})
+    const newPost = await Post.addPost(req.body)
+    res.send({...newPost, message: "Mission Succeeded"})
   } catch(err) {
     res.status(401).send({message: err.message})
   }

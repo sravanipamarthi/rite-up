@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+#home {
+    margin-left: 20px;
+}
+
+#name {
+    cursor: default;
+}
+
+#logout {
+    margin-right: 20px;
+}
+
+/* Add this CSS to your existing stylesheet or create a new one */
+
+#urlNotFound {
+    text-align: center;
+    margin: 50px auto;
+}
+
+#urlNotFound h2 {
+    color: #ff0000;
+}
+
+#urlNotFound p {
+    color: #333;
+    font-size: 18px;
+}

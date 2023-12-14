@@ -37,8 +37,9 @@ async function addPost(post) {
   `
 
   await con.query(sql)
-  return post
+  return post;
 }
+
 
 // Update - CRUD
 async function editPost(post) {
@@ -64,8 +65,9 @@ async function deletePost(post) {
 
 async function getAllPosts() {
   let sql = `
-    SELECT p.Content, u.Username FROM post p
-    join user u on u.UserId=p.UserId;
+    SELECT p.PostId, p.Content, p.UserId, u.Username FROM post p
+    join user u on u.UserId=p.UserId
+    ORDER BY p.CreatedAt DESC;
   `
   return await con.query(sql)
 }

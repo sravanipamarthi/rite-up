@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/feed.css">
+    <title>Home</title>
+</head>
+
+<body>
+    <nav>
+        <a href="#" id="home">Home</a>
+        <a href="/login" id="login">Login</a>
+        <a href="/register" id="register">Register</a>
+        <a href="#" id="name" style="display: none;">Hi Buddy</a>
+        <a href="/logout" id="logout" style="display: none;">Logout</a>
+    </nav>
+    <section id="postSection">
+        <form action="" id="postForm">
+            <h4>Post:</h4>
+            <textarea placeholder="Enter your words" id="Content" name="post" id="post" cols="30" required
+                rows="10"></textarea>
+            <input type="submit" value="send">
+
+        </form>
+    </section>
+    <section id="seePosts">
+    </section>
+    <script src="./js/feed.js"></script>
+    <script src="./js/common.js"></script>
+</body>
+
+</html>
