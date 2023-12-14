@@ -7,8 +7,8 @@ async function createTable() {
     UserId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     FirstName VARCHAR(100) NOT NULL,
     LastName VARCHAR(100) NOT NULL,
-    Username VARCHAR(100) NOT NULL,
-    Email VARCHAR(255) NOT NULL,
+    Username VARCHAR(100) NOT NULL UNIQUE,
+    Email VARCHAR(255) NOT NULL UNIQUE,
     Password VARCHAR(255) NOT NULL,
     CreatedAt DATETIME default(NOW())
   );
@@ -41,7 +41,10 @@ async function login(user) {
 // Register (Create) New User
 async function register(user) {
   let userResult = await getUser(user.username)
-  if(userResult.length > 0) throw Error("Username already in use!!")
+  let userEmailResult = await getUser(user.email)
+  console.log(user.email, user.username);
+  console.log("Results: ", userResult, userEmailResult);
+  if(userResult.length > 0 || userEmailResult.length > 0) throw Error("Username/Email already exists!!")
 
   let sql = `
     INSERT INTO USER(FirstName, LastName, Username, Email, Password) 
@@ -56,7 +59,7 @@ async function register(user) {
 // Update - CRUD
 async function editUser(user) {
   let updatedUser = await getUser(user.username)
-  if(updatedUser.length > 0) throw Error("Username not available!")
+  if(updatedUser.length == 0) throw Error("Username not available!")
 
   let sql = `UPDATE user
     SET Username = "${user.username}"
@@ -86,7 +89,7 @@ async function getUsers() {
 async function getUser(username) {
   let sql = `
     SELECT * FROM user
-    WHERE Username = "${username}" 
+    WHERE Username = "${username}" OR Email = "${username}" 
   `
   return await con.query(sql)
 }

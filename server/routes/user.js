@@ -26,6 +26,7 @@ router
 // register route
 .post('/register', async (req, res) => {
   try {
+    console.log(req.body);
     const user = await User.register(req.body)
     res.send({...user, Password: undefined})
   } catch(err) {
