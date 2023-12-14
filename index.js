@@ -5,13 +5,13 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const userRoutes = require('./server/routes/user')
 const postRoutes = require('./server/routes/post')
-const likeRoutes = require('./server/routes/like')
 
 const app = express()
 const PORT = process.env.PORT || 3000
 
 app.use(cors());
 app.use(cookieParser());
+app.use(express.json());
 app.use(bodyParser.json());
 
 // serve static file
@@ -27,7 +27,6 @@ app.use(function(req, res, next) {
 
 app.use('/users', userRoutes)
 app.use('/posts', postRoutes)
-app.use('/likes', likeRoutes)
 
 app.get('/', (req, res) => {
     const userIdCookie = req.cookies.userId;

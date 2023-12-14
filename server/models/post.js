@@ -43,11 +43,12 @@ async function addPost(post) {
 
 // Update - CRUD
 async function editPost(post) {
-  let updatedPost = await getPost(post.postId)
+  console.log(post);
+  let updatedPost = await getPost(post.PostId)
   if(updatedPost.length == 0) throw Error("Post not available!")
 
   let sql = `UPDATE post
-    SET Content = "${post.content}"
+    SET Content = "${post.Content}"
     WHERE PostId = ${post.PostId};
   `
   await con.query(sql)
@@ -98,7 +99,7 @@ async function getPost(postId) {
   let sql = `
     SELECT p.content, u.username FROM post p
     join user u on u.UserId=p.UserId
-    WHERE p.PostId = "${PostId}"
+    WHERE p.PostId = "${postId}"
     `
   return await con.query(sql)
 }

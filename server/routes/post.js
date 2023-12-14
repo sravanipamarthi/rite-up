@@ -35,8 +35,10 @@ router
 
 .put('/edit', async (req, res) => {
   try {
-    let Post = await Post.editPost(req.body)
-    res.send({...Post, message: "Mission Succeeded"})
+    let postContent = req.body;
+    console.log(postContent + " | " + postContent.PostId + ", " + postContent.Content);
+    let postData = await Post.editPost(postContent)
+    res.send({...postData, message: "Mission Succeeded"})
   } catch(err) {
     res.status(401).send({message: err.message})
   }

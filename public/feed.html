@@ -26,6 +26,15 @@
 
         </form>
     </section>
+    <div id="editModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">X&times;</span>
+            <label for="editedContent">Edit Content:</label>
+            <textarea id="editedContent"></textarea>
+            <button onclick="saveEditedContent()">Save</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
     <section id="seePosts">
     </section>
     <script src="./js/feed.js"></script>
